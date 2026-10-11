@@ -1,0 +1,22 @@
+# Naše kuchyně – nasazení na NAS
+# Složka na NASu: /volume2/docker/kuchyne/  (tento soubor + podsložka data/)
+#
+# Před prvním spuštěním upravte 2 věci:
+#  1) VLASTNIK = váš GitHub účet (malými písmeny)
+#  2) cestu k záloze na RAID 1 (řádek s /backup)
+
+services:
+  kuchyne:
+    image: ghcr.io/VLASTNIK/kuchyne:latest
+    container_name: kuchyne
+    restart: unless-stopped
+    ports:
+      - "3100:3000"            # aplikace pak běží na http://IP-NASu:3100
+    environment:
+      TZ: Europe/Prague
+      BACKUP_DIR: /backup      # měsíční záloha (databáze + fotky)
+      BACKUP_EVERY_DAYS: "30"
+      BACKUP_KEEP: "6"
+    volumes:
+      - ./data:/data                               # databáze kuchyne.db + složka fotky/
+      - /volume1/Rodina/Zalohy/kuchyne:/backup     # ← složka na RAID 1 (upravte podle sebe)

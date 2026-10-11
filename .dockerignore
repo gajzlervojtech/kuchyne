@@ -1,0 +1,6 @@
+**/node_modules
+server/public
+data
+.git
+.github
+*.md
