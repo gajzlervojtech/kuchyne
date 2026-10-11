@@ -1,6 +1,6 @@
 # Naše kuchyně
 
-Jedna aplikace na recepty, jídelníček a nákupní seznam. Běží v jednom Docker kontejneru na NASu a mají k ní přístup oba (bez účtů, všechno je sdílené).
+Jedna aplikace na recepty, jídelníček a nákupní seznam. Běží v jednom Docker kontejneru na NASu.
 
 - **Recepty:** hlavní jídla a dezerty, fotky (automaticky se zmenší na 1200 px), suroviny, postup, poznámky, přepočet porcí.
 - **Jídelníček:** stálá šablona 4 týdnů (Po–Pá), týdny se střídají samy, jídla se mění jen ručně. Víkendová jídla jsou seznam 12 jídel, ze kterého se vybírá na sobotu a neděli.
